@@ -1,36 +1,52 @@
 package br.com.webarquiteto.basicas;
 
-import java.util.List;
+import java.util.Date;
 
-public class Fisica extends Pessoa {
+
+
+public class Fisica extends Cliente {
  
-	private int codFisica;
+
+	// atributos primarios
+	
+	private long codFisica;
 	 
 	private String numCpf;
-	 
-	private Pessoa pessoa;
-	 
-	/*private Orcamento[] orcamento;*/
-	 
-	public void adicionarFisica() {
-	 
+
+	// construtores
+	
+	public Fisica(String nomePessoa, String telefoneResidencial,
+			String telefoneComercial, String telefoneCelular,
+			Date dataNascimento, Endereco endereco, String numCpf) {
+		super(nomePessoa, telefoneResidencial, telefoneComercial,
+				telefoneCelular, dataNascimento, endereco);
+		this.numCpf = numCpf;
 	}
-	 
-	public void removerFisica() {
-	 
+
+	public Fisica() {
+		super();
 	}
-	 
-	public List listarFisica() {
-		return null;
+
+	// gets e sets
+	
+	public long getCodFisica() {
+		return codFisica;
 	}
-	 
-	public Fisica procurarFisica() {
-		return null;
+
+	public void setCodFisica(long codFisica) {
+		this.codFisica = codFisica;
 	}
-	 
-	public void atualizarFisica() {
-	 
+
+	public String getNumCpf() {
+		return numCpf;
 	}
+
+	public void setNumCpf(String numCpf) {
+		this.numCpf = numCpf;
+	}
+
+	
+	
 	 
 }
  

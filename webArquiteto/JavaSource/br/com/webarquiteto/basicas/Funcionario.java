@@ -1,10 +1,12 @@
 package br.com.webarquiteto.basicas;
 
-import java.util.List;
+
 
 public class Funcionario extends Pessoa {
- 
-	private int codFuncionario;
+	
+	// atributos primarios
+	
+	private long codFuncionario;
 	 
 	private String numCrea;
 	 
@@ -18,33 +20,94 @@ public class Funcionario extends Pessoa {
 	 
 	private int nivelAcesso;
 	 
-	private Pessoa pessoa;
-	 
-	/*private ListaOrcamento listaOrcamento;
-	 
-	private Orcamento orcamento;
-	 
-	private ListaOrcamentos[] listaOrcamentos;*/
-	 
-	public void adicionarFuncionario() {
-	 
+	private String numCpf;
+
+	// construtores
+	
+	public Funcionario(String numCrea, String cargo, String profissao,
+			String senha, String login, int nivelAcesso, String numCpf) {
+		super();
+		this.numCrea = numCrea;
+		this.cargo = cargo;
+		this.profissao = profissao;
+		this.senha = senha;
+		this.login = login;
+		this.nivelAcesso = nivelAcesso;
+		this.numCpf = numCpf;
 	}
-	 
-	public void removerFuncionario() {
-	 
+
+	public Funcionario() {
+		super();
 	}
-	 
-	public void atualizarFuncionario() {
-	 
+	
+	// gets e sets
+	
+	public long getCodFuncionario() {
+		return codFuncionario;
 	}
-	 
-	public Funcionario procurarFuncionario() {
-		return null;
+
+	public void setCodFuncionario(long codFuncionario) {
+		this.codFuncionario = codFuncionario;
 	}
-	 
-	public List listarFuncionario() {
-		return null;
+
+	public String getNumCrea() {
+		return numCrea;
 	}
+
+	public void setNumCrea(String numCrea) {
+		this.numCrea = numCrea;
+	}
+
+	public String getCargo() {
+		return cargo;
+	}
+
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
+	}
+
+	public String getProfissao() {
+		return profissao;
+	}
+
+	public void setProfissao(String profissao) {
+		this.profissao = profissao;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public int getNivelAcesso() {
+		return nivelAcesso;
+	}
+
+	public void setNivelAcesso(int nivelAcesso) {
+		this.nivelAcesso = nivelAcesso;
+	}
+
+	public String getNumCpf() {
+		return numCpf;
+	}
+
+	public void setNumCpf(String numCpf) {
+		this.numCpf = numCpf;
+	}
+	
+	
+	
 	 
 }
  

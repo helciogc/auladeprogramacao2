@@ -6,13 +6,14 @@
   <id name="codPessoa">
    <generator class="native"/>
   </id>
- 
+  <property name="nomePessoa"/>
+  <property  name="telefoneResidencial"/>
+  <property  name="telefoneComercial"/>
+  <property  name="telefoneCelular"/>
+  <property  name="dataNascimento"/>
   
-  <property name="nomePessoa" />
-  <property name="telefoneCelular" />
-  <property name="telefoneResidencial"/>
-  <property name="telefoneComercial"/>
-  <property name="dataNascimento"/>
- 
+  	<!--inserindo ligações das classes-->
+ 	  
+ 	<many-to-one name="endereco" class="Endereco" cascade="all" unique="true"/>
  </class>
 </hibernate-mapping>

@@ -1,12 +1,12 @@
 package br.com.webarquiteto.basicas;
 
 import java.util.Date;
-import java.util.List;
+
 
 public class Pessoa {
  
 	// atributos primarios
-	private int codPessoa;
+	private long codPessoa;
 	 
 	private String nomePessoa;
 	 
@@ -23,45 +23,34 @@ public class Pessoa {
 	// atributos secundarios
 	private Endereco endereco;
 	 
-	private Fisica fisica;
-	 
-	private Juridica juridica;
-	 
-	private Funcionario funcionario;
-	 
-	private Fornecedor fornecedor;
-
+	
 	// contrutores
-	public Pessoa(int codPessoa, String nomePessoa, String telefoneResidencial,
-			String telefoneComercial, String telefoneCelular,
-			Date dataNascimento) {
-		super();
-		this.codPessoa = codPessoa;
-		this.nomePessoa = nomePessoa;
-		this.telefoneResidencial = telefoneResidencial;
-		this.telefoneComercial = telefoneComercial;
-		this.telefoneCelular = telefoneCelular;
-		this.dataNascimento = dataNascimento;
-
-		this.endereco = endereco;
-		this.fisica = fisica;
-		this.juridica = juridica;
-		this.funcionario = funcionario;
-		this.fornecedor = fornecedor;
-	}
-
+	
 	public Pessoa(){
 		
 	}
 	
 	
+	public Pessoa(String nomePessoa, String telefoneResidencial,
+			String telefoneComercial, String telefoneCelular,
+			Date dataNascimento, Endereco endereco) {
+		super();
+		this.nomePessoa = nomePessoa;
+		this.telefoneResidencial = telefoneResidencial;
+		this.telefoneComercial = telefoneComercial;
+		this.telefoneCelular = telefoneCelular;
+		this.dataNascimento = dataNascimento;
+		this.endereco = endereco;
+	}
+
+
 	// gets e sets
 	
-	public int getCodPessoa() {
+	public long getCodPessoa() {
 		return codPessoa;
 	}
 
-	public void setCodPessoa(int codPessoa) {
+	public void setCodPessoa(long codPessoa) {
 		this.codPessoa = codPessoa;
 	}
 
@@ -114,37 +103,7 @@ public class Pessoa {
 		this.endereco = endereco;
 	}
 
-	public Fisica getFisica() {
-		return fisica;
-	}
-
-	public void setFisica(Fisica fisica) {
-		this.fisica = fisica;
-	}
-
-	public Juridica getJuridica() {
-		return juridica;
-	}
-
-	public void setJuridica(Juridica juridica) {
-		this.juridica = juridica;
-	}
-
-	public Funcionario getFuncionario() {
-		return funcionario;
-	}
-
-	public void setFuncionario(Funcionario funcionario) {
-		this.funcionario = funcionario;
-	}
-
-	public Fornecedor getFornecedor() {
-		return fornecedor;
-	}
-
-	public void setFornecedor(Fornecedor fornecedor) {
-		this.fornecedor = fornecedor;
-	}
+	
 	 
 	
 	 

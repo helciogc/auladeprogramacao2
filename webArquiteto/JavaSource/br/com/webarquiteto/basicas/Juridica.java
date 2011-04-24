@@ -1,38 +1,66 @@
 package br.com.webarquiteto.basicas;
 
-import java.util.List;
+import java.util.Date;
 
-public class Juridica extends Pessoa {
+
+
+public class Juridica extends Cliente {
  
-	private int codJuridica;
+	//atributos primarios
+	
+	private long codJuridica;
 	 
 	private String numCnpj;
 	 
 	private String contato;
-	 
-	private Pessoa pessoa;
-	 
-/*	private Orcamento[] orcamento;*/
-	 
-	public void adicionarJuridica() {
-	 
+
+	// construtores
+	
+	public Juridica() {
+		super();
+		
 	}
-	 
-	public void removerJuridica() {
-	 
+
+	public Juridica(String nomePessoa, String telefoneResidencial,
+			String telefoneComercial, String telefoneCelular,
+			Date dataNascimento, Endereco endereco,String numCnpj, String contato) {
+		super(nomePessoa, telefoneResidencial, telefoneComercial, telefoneCelular,
+				dataNascimento, endereco);
+		this.numCnpj = numCnpj;
+		this.contato = contato;
 	}
-	 
-	public void atualizarJuridica() {
-	 
+
+	//gets e sets
+	
+	public long getCodJuridica() {
+		return codJuridica;
 	}
-	 
-	public List listarJuridica() {
-		return null;
+
+	public void setCodJuridica(long codJuridica) {
+		this.codJuridica = codJuridica;
 	}
-	 
-	public Juridica procurarJuridica() {
-		return null;
+
+	public String getNumCnpj() {
+		return numCnpj;
 	}
+
+	public void setNumCnpj(String numCnpj) {
+		this.numCnpj = numCnpj;
+	}
+
+	public String getContato() {
+		return contato;
+	}
+
+	public void setContato(String contato) {
+		this.contato = contato;
+	}
+
+	
+
+	
+	
+	
 	 
 }
  

@@ -1,40 +1,65 @@
 package br.com.webarquiteto.basicas;
 
-import java.util.List;
-
 public class Fornecedor extends Pessoa {
  
-	private int codFornecedor;
+	// atributos primarios
+	
+	private long codFornecedor;
 	 
 	private String linhaDeFornecimento;
 	 
 	private String contato;
 	 
-	private Pessoa pessoa;
-	 
-	/*private Projeto[] projeto;
-	 
-	private ListaDeProduto[] listaDeProduto;*/
-	 
-	public void adicionarFornecedor() {
-	 
+	private String numCnpj;
+
+	// construtores
+	
+	public Fornecedor(String linhaDeFornecimento, String contato, String numCnpj) {
+		super();
+		this.linhaDeFornecimento = linhaDeFornecimento;
+		this.contato = contato;
+		this.numCnpj = numCnpj;
 	}
-	 
-	public void removerFornecedor() {
-	 
+
+	public Fornecedor() {
+		super();
 	}
-	 
-	public void atualizarFornecedor() {
-	 
+
+	// gets e sets
+	
+	public long getCodFornecedor() {
+		return codFornecedor;
 	}
-	 
-	public Fornecedor procurarFornecedor() {
-		return null;
+
+	public void setCodFornecedor(long codFornecedor) {
+		this.codFornecedor = codFornecedor;
 	}
-	 
-	public List listarFornecedor() {
-		return null;
+
+	public String getLinhaDeFornecimento() {
+		return linhaDeFornecimento;
 	}
+
+	public void setLinhaDeFornecimento(String linhaDeFornecimento) {
+		this.linhaDeFornecimento = linhaDeFornecimento;
+	}
+
+	public String getContato() {
+		return contato;
+	}
+
+	public void setContato(String contato) {
+		this.contato = contato;
+	}
+
+	public String getNumCnpj() {
+		return numCnpj;
+	}
+
+	public void setNumCnpj(String numCnpj) {
+		this.numCnpj = numCnpj;
+	}
+	
+	
 	 
 }
  
