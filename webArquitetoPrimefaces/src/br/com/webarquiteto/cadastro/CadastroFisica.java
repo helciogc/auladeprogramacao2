@@ -17,7 +17,7 @@ public class CadastroFisica implements InterfaceCadastroFisica {
 	@Override
 	public void adicionarFisica(Fisica Fi) {
 		
-		if(procurarFisicaCpf(Fi.getNumCpf()) != null){
+		if(procurarFisicaCpf(Fi.getNumCpf()) == null){
 		clienteFisica.adicionarFisica(Fi);
 		}
 		
