@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+<h:head>
+	<title>Cadastro de Pessoa Fisica</title>
+</h:head>
+
+
+<h:body>
+	<h:form>
+		<!-- mensagem de feedback -->
+		<p:growl id="validaFuncionario" />
+
+		<h:panelGrid columns="1">
+
+			<p:fieldset legend="Dados Pessoas">
+
+				<!-- panel grid que coloca um embaixo do outro -->
+				<h:outputLabel value="Nome:*" />
+				<h:panelGrid columns="2">
+					<!-- panel grid que coloca um ao lado do outro -->
+					<p:inputText id="nomePessoaFisica" value="#{fisicaBean.clienteFisica.nomePessoa}" required="true" size="40" />
+					<p:message for="nomePessoaFisica" display="icon" />
+				</h:panelGrid>
+				<!-- panel grid que coloca um ao lado do outro -->
+
+				<h:outputLabel value="CPF:*" />
+				<h:panelGrid columns="2">
+					<!-- panel grid que coloca um ao lado do outro -->
+					<p:inputMask id="cpfPessoaFisica" mask="999.999.999-99"
+						required="true" size="11" value="#{fisicaBean.clienteFisica.numCpf}"/>
+					<p:message for="cpfPessoaFisica" display="icon" />
+				</h:panelGrid>
+				<!-- panel grid que coloca um ao lado do outro -->
+
+				<h:outputLabel value="Data de Nascimento:" />
+				<h:panelGrid columns="2">
+					<!-- panel grid que coloca um ao lado do outro -->
+					<p:calendar id="dataNascimento" mode="popup" value="#{fisicaBean.clienteFisica.dataNascimento}"
+					navigator="true" size="08" pattern="dd.MM.yyyy">
+					</p:calendar>
+					<p:message for="dataNascimento" display="icon" />
+				</h:panelGrid>
+				<!-- panel grid que coloca um ao lado do outro -->
+			</p:fieldset>
+
+			<p:fieldset legend="Dados do Endereço">
+
+			<h:panelGrid columns="2">	
+				<h:panelGrid columns="1">
+				<h:outputLabel value="Logradouro:*(Rua,Av,Tr)" />
+				<h:panelGrid columns="2">
+					<!-- panel grid que coloca um ao lado do outro -->
+					<p:inputText id="nomeRua" required="true" size="40" value="#{fisicaBean.clienteFisica.endereco.nomeRua}"/>
+					<p:message for="nomeRua" display="icon" />
+				</h:panelGrid>
+				<!-- panel grid que coloca um ao lado do outro -->
+				</h:panelGrid>
+				
+							
+				<h:panelGrid columns="1">
+				<h:outputLabel value="Bairro:" />
+				<h:panelGrid columns="2">
+					<!-- panel grid que coloca um ao lado do outro -->
+					<p:inputText id="bairro" required="true" size="20" value="#{fisicaBean.clienteFisica.endereco.nomeBairro}" />
+					<p:message for="bairro" display="icon" />
+				</h:panelGrid>
+				<!-- panel grid que coloca um ao lado do outro -->
+				</h:panelGrid>
+				
+				<h:panelGrid columns="1">
+				<h:outputLabel value="Cidade:" />
+				<h:panelGrid columns="2">
+					<!-- panel grid que coloca um ao lado do outro -->
+					<p:inputText id="cidade" required="true" size="20" value="#{fisicaBean.clienteFisica.endereco.nomeCidade}"/>
+					<p:message for="cidade" display="icon" />
+				</h:panelGrid>
+				<!-- panel grid que coloca um ao lado do outro -->
+				</h:panelGrid>
+				
+				<h:panelGrid columns="1">
+				<h:outputLabel value="CEP:*" />
+				<h:panelGrid columns="2">
+					<!-- panel grid que coloca um ao lado do outro -->
+					<p:inputMask id="cep" mask="99.999-999" required="true" size="7" value="#{fisicaBean.clienteFisica.endereco.cep}" />
+					<p:message for="cep" display="icon" />
+				</h:panelGrid>
+				<!-- panel grid que coloca um ao lado do outro -->
+				</h:panelGrid>
+			</h:panelGrid>
+			</p:fieldset>
+
+			<p:fieldset legend="Dados de Contato">
+
+				<!-- panel grid que coloca um embaixo do outro -->
+				<h:outputLabel value="Telefone Residencial:" />
+				<h:panelGrid columns="2">
+					<!-- panel grid que coloca um ao lado do outro -->
+					<p:inputMask id="telefoneResidencial" mask="(99)9999-9999" size="9" value="#{fisicaBean.clienteFisica.telefoneResidencial}" />
+					<p:message for="telefoneResidencial" display="icon" />
+				</h:panelGrid>
+				<!-- panel grid que coloca um ao lado do outro -->
+
+				<h:outputLabel value="Telefone Celular:" />
+				<h:panelGrid columns="2">
+					<!-- panel grid que coloca um ao lado do outro -->
+					<p:inputMask id="telefoneCelular" mask="(99)9999-9999" size="9" value="#{fisicaBean.clienteFisica.telefoneCelular}"/>
+					<p:message for="telefoneCelular" display="icon" />
+				</h:panelGrid>
+				<!-- panel grid que coloca um ao lado do outro -->
+
+
+				<h:outputLabel value="E-mail:" />
+				<h:panelGrid columns="2">
+					<!-- panel grid que coloca um ao lado do outro -->
+					<p:inputText id="emailPessoaFisica" required="true" size="20" value="#{fisicaBean.clienteFisica.email}"/>
+					<p:message for="emailPessoaFisica" display="icon" />
+				</h:panelGrid>
+				<!-- panel grid que coloca um ao lado do outro -->
+
+
+			</p:fieldset>
+
+
+			<p:commandButton actionListener="#{fisicaBean.salvarFisica}" 
+							 value="Salvar" title="Salvar Funcionario" />
+		</h:panelGrid>
+		<!-- panel grid que coloca um embaixo do outro -->
+
+	</h:form>
+</h:body>
+</html>
