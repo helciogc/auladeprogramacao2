@@ -24,9 +24,9 @@ public class Fornecedor extends Pessoa {
 	public Fornecedor(String nomePessoa, String telefoneResidencial,
 			String telefoneComercial, String telefoneCelular,
 			Date dataNascimento, Endereco endereco, String linhaDeFornecimento,
-			String contato, String numCnpj) {
+			String contato, String numCnpj, String email) {
 		super(nomePessoa, telefoneResidencial, telefoneComercial,
-				telefoneCelular, dataNascimento, endereco);
+				telefoneCelular, dataNascimento, endereco, email);
 		this.linhaDeFornecimento = linhaDeFornecimento;
 		this.contato = contato;
 		this.numCnpj = numCnpj;
@@ -36,9 +36,9 @@ public class Fornecedor extends Pessoa {
 
 	public Fornecedor(String nomePessoa, String telefoneResidencial,
 			String telefoneComercial, String telefoneCelular,
-			Date dataNascimento, Endereco endereco) {
+			Date dataNascimento, Endereco endereco, String email) {
 		super(nomePessoa, telefoneResidencial, telefoneComercial,
-				telefoneCelular, dataNascimento, endereco);
+				telefoneCelular, dataNascimento, endereco, email);
 	}
 
 

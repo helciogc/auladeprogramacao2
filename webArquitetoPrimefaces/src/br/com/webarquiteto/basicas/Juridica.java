@@ -28,17 +28,17 @@ public class Juridica extends Cliente implements Serializable{
 	
 	public Juridica(String nomePessoa, String telefoneResidencial,
 			String telefoneComercial, String telefoneCelular,
-			Date dataNascimento, Endereco endereco) {
+			Date dataNascimento, Endereco endereco, String email) {
 		super(nomePessoa, telefoneResidencial, telefoneComercial,
-				telefoneCelular, dataNascimento, endereco);
+				telefoneCelular, dataNascimento, endereco, email);
 	}
 
 
 	public Juridica(String nomePessoa, String telefoneResidencial,
 			String telefoneComercial, String telefoneCelular,
-			Date dataNascimento, Endereco endereco,String numCnpj, String contato) {
+			Date dataNascimento, Endereco endereco,String numCnpj, String contato, String email) {
 		super(nomePessoa, telefoneResidencial, telefoneComercial, telefoneCelular,
-				dataNascimento, endereco);
+				dataNascimento, endereco, email);
 		this.numCnpj = numCnpj;
 		this.contato = contato;
 	}

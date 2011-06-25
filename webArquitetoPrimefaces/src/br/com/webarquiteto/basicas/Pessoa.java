@@ -5,6 +5,8 @@ import java.util.Date;
 
 public class Pessoa {
  
+
+
 	// atributos primarios
 	private long codPessoa;
 	 
@@ -17,6 +19,8 @@ public class Pessoa {
 	private String telefoneCelular;
 	 
 	private Date dataNascimento;
+	
+	private String email;
 	 
 
 	 
@@ -33,7 +37,7 @@ public class Pessoa {
 	
 	public Pessoa(String nomePessoa, String telefoneResidencial,
 			String telefoneComercial, String telefoneCelular,
-			Date dataNascimento, Endereco endereco) {
+			Date dataNascimento, Endereco endereco, String email) {
 		super();
 		this.nomePessoa = nomePessoa;
 		this.telefoneResidencial = telefoneResidencial;
@@ -41,10 +45,20 @@ public class Pessoa {
 		this.telefoneCelular = telefoneCelular;
 		this.dataNascimento = dataNascimento;
 		this.endereco = endereco;
+		this.email = email;
 	}
 
 
 	// gets e sets
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	
 	public long getCodPessoa() {
 		return codPessoa;

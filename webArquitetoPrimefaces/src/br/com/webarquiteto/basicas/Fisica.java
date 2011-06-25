@@ -16,27 +16,22 @@ public class Fisica extends Cliente implements Serializable{
 	// construtores
 	
 
+	
 
 	
-	
-	public Fisica(String nomePessoa, String telefoneResidencial,
-			String telefoneComercial, String telefoneCelular,
-			Date dataNascimento, Endereco endereco, String numCpf) {
-		super(nomePessoa, telefoneResidencial, telefoneComercial,
-				telefoneCelular, dataNascimento, endereco);
-		this.numCpf = numCpf;
-	}
-
-	public Fisica(String nomePessoa, String telefoneResidencial,
-			String telefoneComercial, String telefoneCelular,
-			Date dataNascimento, Endereco endereco) {
-		super(nomePessoa, telefoneResidencial, telefoneComercial,
-				telefoneCelular, dataNascimento, endereco);
-	}
-
 	public Fisica() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
+
+	public Fisica(String nomePessoa, String telefoneResidencial,
+			String telefoneComercial, String telefoneCelular,
+			Date dataNascimento, Endereco endereco, String email) {
+		super(nomePessoa, telefoneResidencial, telefoneComercial,
+				telefoneCelular, dataNascimento, endereco, email);
+	}
+
+	
 	
 
 	// gets e sets
@@ -46,6 +41,8 @@ public class Fisica extends Cliente implements Serializable{
 	public String getNumCpf() {
 		return numCpf;
 	}
+
+
 
 	public void setNumCpf(String numCpf) {
 		this.numCpf = numCpf;
