@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <!-- Inserindo configuração banco -->
+ <session-factory name="">
+  <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+  <property name="hibernate.connection.password">helcio</property>
+  <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/bancoArquiteto</property>
+  <property name="hibernate.connection.username">helcio</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+  <property name="hibernate.hbm2ddl.auto">create</property>
+  <property name="current_session_context_class">thread</property>
+  
+  <!-- Inserindo mapeamento -->
+  <mapping resource="br/com/webarquiteto/colecoes/mapeamento/Cliente.hbm.xml"/>
+  <mapping resource="br/com/webarquiteto/colecoes/mapeamento/Endereco.hbm.xml"/>
+  <mapping resource="br/com/webarquiteto/colecoes/mapeamento/Fisica.hbm.xml"/>
+  <mapping resource="br/com/webarquiteto/colecoes/mapeamento/Fornecedor.hbm.xml"/>
+  <mapping resource="br/com/webarquiteto/colecoes/mapeamento/Funcionario.hbm.xml"/>
+  <mapping resource="br/com/webarquiteto/colecoes/mapeamento/Juridica.hbm.xml"/>
+  <mapping resource="br/com/webarquiteto/colecoes/mapeamento/Pessoa.hbm.xml"/>
+ </session-factory>
+</hibernate-configuration>

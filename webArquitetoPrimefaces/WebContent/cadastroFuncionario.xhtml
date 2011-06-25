@@ -13,7 +13,10 @@
 	<h:form>
 		<!-- mensagem de feedback -->
 		<p:growl id="validaFuncionario" />
+		
 		<h:panelGrid columns="1">
+		<p:fieldset>
+			<legend>Dados Pessoais</legend>
 			<!-- panel grid que coloca um embaixo do outro -->
 			<h:outputLabel value="Nome:" />
 			<h:panelGrid columns="2">
@@ -30,9 +33,11 @@
 				<p:message for="emailFuncionario" display="icon" />
 			</h:panelGrid>
 			<!-- panel grid que coloca um ao lado do outro -->
+		</p:fieldset>
 		<p:commandButton value="Salvar" title="Salvar Funcionario" />
 		</h:panelGrid>
 		<!-- panel grid que coloca um embaixo do outro -->
+		
 	</h:form>
 </h:body>
 </html>
