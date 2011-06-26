@@ -31,12 +31,21 @@ public class Fisica extends Cliente implements Serializable{
 				telefoneCelular, dataNascimento, endereco, email);
 	}
 
-	
-	
+
+	public Fisica(String nomePessoa, String telefoneResidencial,
+			String telefoneComercial, String telefoneCelular,
+			Date dataNascimento, Endereco endereco, String email, String numCpf) {
+		super(nomePessoa, telefoneResidencial, telefoneComercial,
+				telefoneCelular, dataNascimento, endereco, email);
+		this.numCpf = numCpf;
+	}
 
 	// gets e sets
 	
 	
+
+
+
 
 	public String getNumCpf() {
 		return numCpf;

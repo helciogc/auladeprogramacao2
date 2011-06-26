@@ -12,7 +12,7 @@
 <h:body>
 	<h:form>
 		<!-- mensagem de feedback -->
-		<p:growl id="validaFuncionario" />
+		<p:growl id="validaPessoa" />
 
 		<h:panelGrid columns="1">
 
@@ -22,7 +22,9 @@
 				<h:outputLabel value="Nome:*" />
 				<h:panelGrid columns="2">
 					<!-- panel grid que coloca um ao lado do outro -->
-					<p:inputText id="nomePessoaFisica" value="#{fisicaBean.clienteFisica.nomePessoa}" required="true" size="40" />
+					<p:inputText id="nomePessoaFisica"
+						value="#{fisicaBean.clienteFisica.nomePessoa}" required="true"
+						size="40" />
 					<p:message for="nomePessoaFisica" display="icon" />
 				</h:panelGrid>
 				<!-- panel grid que coloca um ao lado do outro -->
@@ -31,7 +33,8 @@
 				<h:panelGrid columns="2">
 					<!-- panel grid que coloca um ao lado do outro -->
 					<p:inputMask id="cpfPessoaFisica" mask="999.999.999-99"
-						required="true" size="11" value="#{fisicaBean.clienteFisica.numCpf}"/>
+						required="true" size="11"
+						value="#{fisicaBean.clienteFisica.numCpf}" />
 					<p:message for="cpfPessoaFisica" display="icon" />
 				</h:panelGrid>
 				<!-- panel grid que coloca um ao lado do outro -->
@@ -39,8 +42,9 @@
 				<h:outputLabel value="Data de Nascimento:" />
 				<h:panelGrid columns="2">
 					<!-- panel grid que coloca um ao lado do outro -->
-					<p:calendar id="dataNascimento" mode="popup" value="#{fisicaBean.clienteFisica.dataNascimento}"
-					navigator="true" size="08" pattern="dd.MM.yyyy">
+					<p:calendar id="dataNascimento" mode="popup"
+						value="#{fisicaBean.clienteFisica.dataNascimento}"
+						navigator="true" size="08" pattern="dd.MM.yyyy">
 					</p:calendar>
 					<p:message for="dataNascimento" display="icon" />
 				</h:panelGrid>
@@ -49,84 +53,108 @@
 
 			<p:fieldset legend="Dados do Endereço">
 
-			<h:panelGrid columns="2">	
-				<h:panelGrid columns="1">
-				<h:outputLabel value="Logradouro:*(Rua,Av,Tr)" />
 				<h:panelGrid columns="2">
-					<!-- panel grid que coloca um ao lado do outro -->
-					<p:inputText id="nomeRua" required="true" size="40" value="#{fisicaBean.clienteFisica.endereco.nomeRua}"/>
-					<p:message for="nomeRua" display="icon" />
+					<h:panelGrid columns="1">
+						<h:outputLabel value="Logradouro:*(Rua,Av,Tr)" />
+						<h:panelGrid columns="2">
+							<!-- panel grid que coloca um ao lado do outro -->
+							<p:inputText id="nomeRua" required="true" size="40"
+								value="#{fisicaBean.clienteFisica.endereco.nomeRua}" />
+							<p:message for="nomeRua" display="icon" />
+						</h:panelGrid>
+						<!-- panel grid que coloca um ao lado do outro -->
+					</h:panelGrid>
+
+
+					<h:panelGrid columns="1">
+						<h:outputLabel value="Bairro:" />
+						<h:panelGrid columns="2">
+							<!-- panel grid que coloca um ao lado do outro -->
+							<p:inputText id="bairro" required="true" size="20"
+								value="#{fisicaBean.clienteFisica.endereco.nomeBairro}" />
+							<p:message for="bairro" display="icon" />
+						</h:panelGrid>
+						<!-- panel grid que coloca um ao lado do outro -->
+					</h:panelGrid>
+
+					<h:panelGrid columns="1">
+						<h:outputLabel value="Cidade:" />
+						<h:panelGrid columns="2">
+							<!-- panel grid que coloca um ao lado do outro -->
+							<p:inputText id="cidade" required="true" size="20"
+								value="#{fisicaBean.clienteFisica.endereco.nomeCidade}" />
+							<p:message for="cidade" display="icon" />
+						</h:panelGrid>
+						<!-- panel grid que coloca um ao lado do outro -->
+					</h:panelGrid>
+
+					<h:panelGrid columns="1">
+						<h:outputLabel value="UF:" />
+						<h:panelGrid columns="2">
+							<!-- panel grid que coloca um ao lado do outro -->
+							<p:inputText id="uf" required="true" size="20"
+								value="#{fisicaBean.clienteFisica.endereco.nomeUf}" />
+							<p:message for="uf" display="icon" />
+						</h:panelGrid>
+						<!-- panel grid que coloca um ao lado do outro -->
+					</h:panelGrid>
+
+					<h:panelGrid columns="1">
+						<h:outputLabel value="CEP:*" />
+						<h:panelGrid columns="2">
+							<!-- panel grid que coloca um ao lado do outro -->
+							<p:inputMask id="cep" mask="99.999-999" required="true" size="7"
+								value="#{fisicaBean.clienteFisica.endereco.cep}" />
+							<p:message for="cep" display="icon" />
+						</h:panelGrid>
+						<!-- panel grid que coloca um ao lado do outro -->
+					</h:panelGrid>
 				</h:panelGrid>
-				<!-- panel grid que coloca um ao lado do outro -->
-				</h:panelGrid>
-				
-							
-				<h:panelGrid columns="1">
-				<h:outputLabel value="Bairro:" />
-				<h:panelGrid columns="2">
-					<!-- panel grid que coloca um ao lado do outro -->
-					<p:inputText id="bairro" required="true" size="20" value="#{fisicaBean.clienteFisica.endereco.nomeBairro}" />
-					<p:message for="bairro" display="icon" />
-				</h:panelGrid>
-				<!-- panel grid que coloca um ao lado do outro -->
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1">
-				<h:outputLabel value="Cidade:" />
-				<h:panelGrid columns="2">
-					<!-- panel grid que coloca um ao lado do outro -->
-					<p:inputText id="cidade" required="true" size="20" value="#{fisicaBean.clienteFisica.endereco.nomeCidade}"/>
-					<p:message for="cidade" display="icon" />
-				</h:panelGrid>
-				<!-- panel grid que coloca um ao lado do outro -->
-				</h:panelGrid>
-				
-				<h:panelGrid columns="1">
-				<h:outputLabel value="CEP:*" />
-				<h:panelGrid columns="2">
-					<!-- panel grid que coloca um ao lado do outro -->
-					<p:inputMask id="cep" mask="99.999-999" required="true" size="7" value="#{fisicaBean.clienteFisica.endereco.cep}" />
-					<p:message for="cep" display="icon" />
-				</h:panelGrid>
-				<!-- panel grid que coloca um ao lado do outro -->
-				</h:panelGrid>
-			</h:panelGrid>
 			</p:fieldset>
 
 			<p:fieldset legend="Dados de Contato">
 
 				<!-- panel grid que coloca um embaixo do outro -->
-				<h:outputLabel value="Telefone Residencial:" />
 				<h:panelGrid columns="2">
+					<h:panelGrid columns="1">
+						<h:outputLabel value="Telefone Residencial:" />
+						<h:panelGrid columns="2">
+							<!-- panel grid que coloca um ao lado do outro -->
+							<p:inputMask id="telefoneResidencial" mask="(99)9999-9999"
+								size="9" value="#{fisicaBean.clienteFisica.telefoneResidencial}" />
+							<p:message for="telefoneResidencial" display="icon" />
+						</h:panelGrid>
+					
 					<!-- panel grid que coloca um ao lado do outro -->
-					<p:inputMask id="telefoneResidencial" mask="(99)9999-9999" size="9" value="#{fisicaBean.clienteFisica.telefoneResidencial}" />
-					<p:message for="telefoneResidencial" display="icon" />
-				</h:panelGrid>
-				<!-- panel grid que coloca um ao lado do outro -->
-
-				<h:outputLabel value="Telefone Celular:" />
-				<h:panelGrid columns="2">
+					</h:panelGrid>
+					<h:panelGrid columns="1">
+						<h:outputLabel value="Telefone Celular:" />
+						<h:panelGrid columns="2">
+							<!-- panel grid que coloca um ao lado do outro -->
+							<p:inputMask id="telefoneCelular" mask="(99)9999-9999" size="9"
+								value="#{fisicaBean.clienteFisica.telefoneCelular}" />
+							<p:message for="telefoneCelular" display="icon" />
+						</h:panelGrid>
+					
 					<!-- panel grid que coloca um ao lado do outro -->
-					<p:inputMask id="telefoneCelular" mask="(99)9999-9999" size="9" value="#{fisicaBean.clienteFisica.telefoneCelular}"/>
-					<p:message for="telefoneCelular" display="icon" />
-				</h:panelGrid>
-				<!-- panel grid que coloca um ao lado do outro -->
-
-
-				<h:outputLabel value="E-mail:" />
-				<h:panelGrid columns="2">
+					</h:panelGrid>
+					<h:panelGrid columns="1">
+						<h:outputLabel value="E-mail:" />
+						<h:panelGrid columns="2">
+							<!-- panel grid que coloca um ao lado do outro -->
+							<p:inputText id="emailPessoaFisica" required="true" size="20"
+								value="#{fisicaBean.clienteFisica.email}" />
+							<p:message for="emailPessoaFisica" display="icon" />
+						</h:panelGrid>
+					
 					<!-- panel grid que coloca um ao lado do outro -->
-					<p:inputText id="emailPessoaFisica" required="true" size="20" value="#{fisicaBean.clienteFisica.email}"/>
-					<p:message for="emailPessoaFisica" display="icon" />
+					</h:panelGrid>
 				</h:panelGrid>
-				<!-- panel grid que coloca um ao lado do outro -->
-
-
 			</p:fieldset>
 
 
-			<p:commandButton actionListener="#{fisicaBean.salvarFisica}" 
-							 value="Salvar" title="Salvar Funcionario" />
+			<p:commandButton actionListener="#{fisicaBean.salvarFisica}"
+				value="Salvar" title="Salvar Funcionario" update="validaPessoa"/>
 		</h:panelGrid>
 		<!-- panel grid que coloca um embaixo do outro -->
 

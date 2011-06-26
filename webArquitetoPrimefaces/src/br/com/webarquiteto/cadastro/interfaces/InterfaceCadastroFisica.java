@@ -3,11 +3,12 @@ package br.com.webarquiteto.cadastro.interfaces;
 import java.util.List;
 
 import br.com.webarquiteto.basicas.Fisica;
+import br.com.webarquiteto.exception.CpfDuplicadoException;
 
 public interface InterfaceCadastroFisica {
 
 	// metodos delegados
-	public abstract void adicionarFisica(Fisica Fi);
+	public abstract void adicionarFisica(Fisica Fi) throws CpfDuplicadoException;
 
 	public abstract void removerFisica(long codFisica);
 

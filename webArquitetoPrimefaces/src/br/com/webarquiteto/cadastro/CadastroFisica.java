@@ -5,23 +5,37 @@ import java.util.List;
 import br.com.webarquiteto.basicas.Fisica;
 import br.com.webarquiteto.cadastro.interfaces.InterfaceCadastroFisica;
 import br.com.webarquiteto.interfaces.InterfaceColecaoFisica;
+import br.com.webarquiteto.exception.CpfDuplicadoException;
 
 public class CadastroFisica implements InterfaceCadastroFisica {
 	//atributos
 	private InterfaceColecaoFisica clienteFisica;
 
+	// construtores
+	
+	public CadastroFisica(InterfaceColecaoFisica clienteFisica) {
+		super();
+		this.clienteFisica = clienteFisica;
+	}
+	
+	
 	// metodos delegados
 	/* (non-Javadoc)
 	 * @see br.com.webarquiteto.cadastro.InterfaceCadastroFisica#adicionarFisica(br.com.webarquiteto.basicas.Fisica)
 	 */
 	@Override
-	public void adicionarFisica(Fisica Fi) {
+	public void adicionarFisica(Fisica Fi) throws CpfDuplicadoException {
 		
-		if((procurarFisicaCpf(Fi.getNumCpf())) == null){
-		clienteFisica.adicionarFisica(Fi);
+		if( (procurarFisicaCpf(Fi.getNumCpf())) == null){
+			clienteFisica.adicionarFisica(Fi);
+		}else{
+			CpfDuplicadoException ex = new CpfDuplicadoException(Fi.getNumCpf());
+			throw ex;
 		}
-		
+			
 	}
+
+	
 
 	/* (non-Javadoc)
 	 * @see br.com.webarquiteto.cadastro.InterfaceCadastroFisica#removerFisica(long)

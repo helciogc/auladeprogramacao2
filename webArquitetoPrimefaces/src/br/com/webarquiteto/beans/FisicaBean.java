@@ -2,16 +2,14 @@ package br.com.webarquiteto.beans;
 
 import java.io.Serializable;
 
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
-
-
-import br.com.webarquiteto.basicas.Endereco;
-import br.com.webarquiteto.basicas.Fisica;
+import javax.faces.application.FacesMessage;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import br.com.webarquiteto.basicas.*;
+import br.com.webarquiteto.exception.CpfDuplicadoException;
 import br.com.webarquiteto.fachada.Fachada;
 
-@ManagedBean
-@ApplicationScoped
+@SessionScoped
 public class FisicaBean implements Serializable {
 
 	// atributos primarios
@@ -26,6 +24,7 @@ public class FisicaBean implements Serializable {
 	
 	// gets e sets
 	public Fisica getClienteFisica() {
+		
 		if(clienteFisica == null){
 			clienteFisica = new Fisica();
 			clienteFisica.setEndereco(new Endereco());
@@ -39,7 +38,18 @@ public class FisicaBean implements Serializable {
 	// metodos
 	
 	public void salvarFisica(){
-		Fachada.getInstancia().adicionarFisica(clienteFisica);
+		
+		try {
+			Fachada.getInstancia().adicionarFisica(clienteFisica);
+			FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO,
+					"Dados Salvos com Sucesso", "");
+			FacesContext.getCurrentInstance().addMessage(null, message);
+		} catch (CpfDuplicadoException e) {
+			FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR,
+					"CPF informado já encontra-se cadastrado no sistema!", "");
+			FacesContext.getCurrentInstance().addMessage(null, message);
+		}
+		clienteFisica = new Fisica();
 	}
 	
 }
