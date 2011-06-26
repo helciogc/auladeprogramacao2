@@ -10,43 +10,47 @@
 
 
 <h:body>
-	<h:form>
+	
+	
+	<h:form id="form">
 		<!-- mensagem de feedback -->
-		<p:growl id="validaPessoa" />
+		
+		<p:growl id="validaPessoa" rendered="#{fisicaBean.validaMsg}" />
 
-		<h:panelGrid columns="1">
+		<h:panelGrid id="panel" columns="1">
 
 			<p:fieldset legend="Dados Pessoas">
 
 				<!-- panel grid que coloca um embaixo do outro -->
-				<h:outputLabel value="Nome:*" />
-				<h:panelGrid columns="2">
+			<br />	<h:outputLabel value="Nome do Cliente:*" />
+				<h:panelGrid columns="3">
 					<!-- panel grid que coloca um ao lado do outro -->
 					<p:inputText id="nomePessoaFisica"
 						value="#{fisicaBean.clienteFisica.nomePessoa}" required="true"
-						size="40" />
-					<p:message for="nomePessoaFisica" display="icon" />
+						size="40" requiredMessage="Campo obrigatorio" />
+					<p:message for="nomePessoaFisica" />
 				</h:panelGrid>
 				<!-- panel grid que coloca um ao lado do outro -->
 
 				<h:outputLabel value="CPF:*" />
-				<h:panelGrid columns="2">
+				<h:panelGrid columns="3">
 					<!-- panel grid que coloca um ao lado do outro -->
 					<p:inputMask id="cpfPessoaFisica" mask="999.999.999-99"
 						required="true" size="11"
-						value="#{fisicaBean.clienteFisica.numCpf}" />
-					<p:message for="cpfPessoaFisica" display="icon" />
+						value="#{fisicaBean.clienteFisica.numCpf}"
+						requiredMessage="Campo obrigatorio" />
+					<p:message for="cpfPessoaFisica" />
 				</h:panelGrid>
 				<!-- panel grid que coloca um ao lado do outro -->
 
 				<h:outputLabel value="Data de Nascimento:" />
-				<h:panelGrid columns="2">
+				<h:panelGrid columns="3">
 					<!-- panel grid que coloca um ao lado do outro -->
 					<p:calendar id="dataNascimento" mode="popup"
 						value="#{fisicaBean.clienteFisica.dataNascimento}"
 						navigator="true" size="08" pattern="dd.MM.yyyy">
 					</p:calendar>
-					<p:message for="dataNascimento" display="icon" />
+					<p:message for="dataNascimento" />
 				</h:panelGrid>
 				<!-- panel grid que coloca um ao lado do outro -->
 			</p:fieldset>
@@ -54,46 +58,51 @@
 			<p:fieldset legend="Dados do Endereço">
 
 				<h:panelGrid columns="2">
+					
 					<h:panelGrid columns="1">
 						<h:outputLabel value="Logradouro:*(Rua,Av,Tr)" />
-						<h:panelGrid columns="2">
-							<!-- panel grid que coloca um ao lado do outro -->
+						<h:panelGrid columns="3">
+							<!--  panel grid que coloca um ao lado do outro --> 
 							<p:inputText id="nomeRua" required="true" size="40"
-								value="#{fisicaBean.clienteFisica.endereco.nomeRua}" />
-							<p:message for="nomeRua" display="icon" />
+								value="#{fisicaBean.clienteFisica.endereco.nomeRua}"
+								requiredMessage="Campo obrigatorio" />
+							<p:message for="nomeRua" />
 						</h:panelGrid>
-						<!-- panel grid que coloca um ao lado do outro -->
-					</h:panelGrid>
-
+						 <!-- panel grid que coloca um ao lado do outro --> 
+					</h:panelGrid> 
+					 
 
 					<h:panelGrid columns="1">
 						<h:outputLabel value="Bairro:" />
-						<h:panelGrid columns="2">
-							<!-- panel grid que coloca um ao lado do outro -->
+						<h:panelGrid columns="3">
+							<!--  panel grid que coloca um ao lado do outro  --> 
 							<p:inputText id="bairro" required="true" size="20"
-								value="#{fisicaBean.clienteFisica.endereco.nomeBairro}" />
-							<p:message for="bairro" display="icon" />
+								value="#{fisicaBean.clienteFisica.endereco.nomeBairro}"
+								requiredMessage="Campo obrigatorio" />
+							<p:message for="bairro" />
 						</h:panelGrid>
-						<!-- panel grid que coloca um ao lado do outro -->
+						 <!-- panel grid que coloca um ao lado do outro  --> 
 					</h:panelGrid>
 
 					<h:panelGrid columns="1">
 						<h:outputLabel value="Cidade:" />
-						<h:panelGrid columns="2">
+						<h:panelGrid columns="3">
 							<!-- panel grid que coloca um ao lado do outro -->
 							<p:inputText id="cidade" required="true" size="20"
-								value="#{fisicaBean.clienteFisica.endereco.nomeCidade}" />
-							<p:message for="cidade" display="icon" />
+								value="#{fisicaBean.clienteFisica.endereco.nomeCidade}"
+								requiredMessage="Campo obrigatorio" />
+							<p:message for="cidade" />
 						</h:panelGrid>
 						<!-- panel grid que coloca um ao lado do outro -->
 					</h:panelGrid>
 
 					<h:panelGrid columns="1">
 						<h:outputLabel value="UF:" />
-						<h:panelGrid columns="2">
+						<h:panelGrid columns="3">
 							<!-- panel grid que coloca um ao lado do outro -->
 							<p:inputText id="uf" required="true" size="20"
-								value="#{fisicaBean.clienteFisica.endereco.nomeUf}" />
+								value="#{fisicaBean.clienteFisica.endereco.nomeUf}"
+								requiredMessage="Campo obrigatorio" />
 							<p:message for="uf" display="icon" />
 						</h:panelGrid>
 						<!-- panel grid que coloca um ao lado do outro -->
@@ -101,7 +110,7 @@
 
 					<h:panelGrid columns="1">
 						<h:outputLabel value="CEP:*" />
-						<h:panelGrid columns="2">
+						<h:panelGrid columns="3">
 							<!-- panel grid que coloca um ao lado do outro -->
 							<p:inputMask id="cep" mask="99.999-999" required="true" size="7"
 								value="#{fisicaBean.clienteFisica.endereco.cep}" />
@@ -118,46 +127,63 @@
 				<h:panelGrid columns="2">
 					<h:panelGrid columns="1">
 						<h:outputLabel value="Telefone Residencial:" />
-						<h:panelGrid columns="2">
+						<h:panelGrid columns="3">
 							<!-- panel grid que coloca um ao lado do outro -->
 							<p:inputMask id="telefoneResidencial" mask="(99)9999-9999"
-								size="9" value="#{fisicaBean.clienteFisica.telefoneResidencial}" />
+								size="9" value="#{fisicaBean.clienteFisica.telefoneResidencial}"
+								required="true" requiredMessage="Campo obrigatorio" />
 							<p:message for="telefoneResidencial" display="icon" />
 						</h:panelGrid>
-					
-					<!-- panel grid que coloca um ao lado do outro -->
+
+						<!-- panel grid que coloca um ao lado do outro -->
 					</h:panelGrid>
 					<h:panelGrid columns="1">
 						<h:outputLabel value="Telefone Celular:" />
-						<h:panelGrid columns="2">
+						<h:panelGrid columns="3">
 							<!-- panel grid que coloca um ao lado do outro -->
 							<p:inputMask id="telefoneCelular" mask="(99)9999-9999" size="9"
-								value="#{fisicaBean.clienteFisica.telefoneCelular}" />
+								value="#{fisicaBean.clienteFisica.telefoneCelular}"
+								required="true" requiredMessage="Campo obrigatorio" />
 							<p:message for="telefoneCelular" display="icon" />
 						</h:panelGrid>
-					
-					<!-- panel grid que coloca um ao lado do outro -->
+
+						<!-- panel grid que coloca um ao lado do outro -->
 					</h:panelGrid>
 					<h:panelGrid columns="1">
 						<h:outputLabel value="E-mail:" />
-						<h:panelGrid columns="2">
+						<h:panelGrid columns="3">
 							<!-- panel grid que coloca um ao lado do outro -->
 							<p:inputText id="emailPessoaFisica" required="true" size="20"
-								value="#{fisicaBean.clienteFisica.email}" />
+								value="#{fisicaBean.clienteFisica.email}"
+								requiredMessage="Campo obrigatorio" />
 							<p:message for="emailPessoaFisica" display="icon" />
 						</h:panelGrid>
-					
-					<!-- panel grid que coloca um ao lado do outro -->
+
+						<!-- panel grid que coloca um ao lado do outro -->
 					</h:panelGrid>
 				</h:panelGrid>
 			</p:fieldset>
 
 
-			<p:commandButton actionListener="#{fisicaBean.salvarFisica}"
-				value="Salvar" title="Salvar Funcionario" update="validaPessoa"/>
+			<p:commandButton id="botaoSalvar" onclick="confirmacao.show()"
+				 update="form" value="Salvar" 
+				title="Salvar Cliente Pessoa Fisica" type="button" />
 		</h:panelGrid>
 		<!-- panel grid que coloca um embaixo do outro -->
 
+		<!-- tela de confirmação -->
+		<p:confirmDialog message="Confirma a gravação dos dados?" modal="true"
+			hideEffect="explode" header="Confirmação" severity="alert"
+			widgetVar="confirmacao">
+
+			<p:commandButton value="Sim" 
+				oncomplete="confirmacao.hide()" update="validaPessoa :form"
+				actionListener="#{fisicaBean.salvarFisica}" process="@form"
+				ajax="true" />
+			<p:commandButton value="Não" onclick="confirmacao.hide()"
+				type="button" />
+
+		</p:confirmDialog>
 	</h:form>
 </h:body>
 </html>
