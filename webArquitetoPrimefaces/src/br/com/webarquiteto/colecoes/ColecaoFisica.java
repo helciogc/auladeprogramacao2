@@ -72,7 +72,7 @@ public class ColecaoFisica implements InterfaceColecaoFisica {
 		
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		sessao.beginTransaction();
-		Query consulta = sessao.createQuery("from Fisica where cpf like ?");
+		Query consulta = sessao.createQuery("from Fisica where numcpf like ?");
 		consulta.setParameter(0, cpf);
 		Fisica fis = (Fisica) consulta.uniqueResult();
 		sessao.getTransaction().commit();

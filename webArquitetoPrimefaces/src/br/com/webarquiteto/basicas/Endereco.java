@@ -19,6 +19,10 @@ public class Endereco {
 	private String nomeUf;
 
 	// construtores
+	public Endereco() {
+		super();
+	}
+
 	
 	public Endereco(String nomeRua, String cep, String nomeBairro,
 			String nomeCidade, String nomeUf) {
@@ -30,10 +34,7 @@ public class Endereco {
 		this.nomeUf = nomeUf;
 	}
 
-	public Endereco() {
-		super();
-	}
-
+	
 	// gets e sets
 	
 	public long getCodEnd() {
