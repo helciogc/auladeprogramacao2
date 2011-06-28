@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+
+<h:head></h:head>
+
+<h:body>
+	<h:form id="formtable">
+
+		<p:dataTable id="tbl" var="TabelaFisica"
+			 value="#{fisicaBean.listarPessoaFisica}" paginator="true" rows="4"
+			selection="#{fisicaBean.clienteFisicaSelecionado}"
+			selectionMode="single" onRowSelectUpdate="atualizaPainel"
+			onRowSelectComplete="seleciona.show()"
+			emptyMessage="Nenhuma cliente foi encontrado!">
+ 
+
+			<f:facet name="header">  
+          Lista de Clientes Cadastrados 
+        </f:facet>
+
+			<p:column filterBy="#{TabelaFisica.nomePessoa}">
+				<f:facet name="header">
+					<h:outputText value="Nome do Cliente:" />
+				</f:facet>
+				<h:outputText value="#{TabelaFisica.nomePessoa}" />
+			</p:column>
+
+
+
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value=" Telefone Residencial:" />
+				</f:facet>
+				<h:outputText value="#{TabelaFisica.telefoneResidencial}" />
+			</p:column>
+
+			<p:column>
+				
+				<f:facet name="header">
+					<h:outputText value="Telefone Celular:" />
+				</f:facet>
+				<h:outputText
+					value="#{TabelaFisica.telefoneCelular}" />
+			</p:column>
+
+		<p:column>
+				
+				<f:facet name="header">
+					<h:outputText value="E-mail:" />
+				</f:facet>
+				<h:outputText
+					value="#{TabelaFisica.email}" />
+			</p:column>
+
+
+		</p:dataTable>
+
+
+
+
+	</h:form>
+
+
+</h:body>
+
+
+
+</html>

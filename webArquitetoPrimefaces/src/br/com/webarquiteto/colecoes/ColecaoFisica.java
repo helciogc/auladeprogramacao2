@@ -50,8 +50,12 @@ public class ColecaoFisica implements InterfaceColecaoFisica {
 	 * @see br.com.webarquiteto.colecoes.InterfaceColecaoFisica#atualizarPessoa()
 	 */
 	@Override
-	public void atualizarPessoa() {
-	 
+	public void atualizarFisica(Fisica fis) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		sessao.beginTransaction();
+		sessao.update(fis);
+		sessao.getTransaction().commit();
+		
 	}
 	 
 	/* (non-Javadoc)

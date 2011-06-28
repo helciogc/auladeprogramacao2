@@ -57,8 +57,8 @@ public class CadastroFisica implements InterfaceCadastroFisica {
 	 * @see br.com.webarquiteto.cadastro.InterfaceCadastroFisica#atualizarPessoa()
 	 */
 	@Override
-	public void atualizarPessoa() {
-		clienteFisica.atualizarPessoa();
+	public void atualizarFisica(Fisica fis) {
+		clienteFisica.atualizarFisica(fis);
 	}
 
 	/* (non-Javadoc)

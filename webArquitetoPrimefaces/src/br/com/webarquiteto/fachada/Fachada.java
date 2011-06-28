@@ -43,8 +43,8 @@ public class Fachada {
 		return clienteFisica.listarFisica();
 	}
 
-	public void atualizarPessoa() {
-		clienteFisica.atualizarPessoa();
+	public void atualizarFisica(Fisica fis) {
+		clienteFisica.atualizarFisica(fis);
 	}
 
 	public Fisica procurarFisica(long codFisica) {

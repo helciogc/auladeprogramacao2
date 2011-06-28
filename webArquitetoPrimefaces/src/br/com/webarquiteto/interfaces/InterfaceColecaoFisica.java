@@ -12,7 +12,7 @@ public interface InterfaceColecaoFisica {
 
 	public abstract List<Fisica> listarFisica();
 
-	public abstract void atualizarPessoa();
+	public abstract void atualizarFisica(Fisica fis);
 
 	public abstract Fisica procurarFisica(long codFisica);
 
