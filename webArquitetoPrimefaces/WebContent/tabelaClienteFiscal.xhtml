@@ -61,7 +61,159 @@
 
 		</p:dataTable>
 
+	<!-- Painel de edição -->
 
+<p:dialog id="alterarCliente" header="Alterar Dados do Cliente"
+			widgetVar="seleciona" resizable="false" width="450" height="500"
+			showEffect="explode" hideEffect="explode">
+
+<!-- Não apagar id -->
+			<h:panelGrid id="atualizaPainel" columns="2">
+				<p:fieldset legend="DADOS DO  CLIENTE">
+
+					<h:panelGrid columns="1"  >
+
+						<p:fieldset>
+							<legend>
+								<font size="3" face="Verdana" color="#008000">
+									Conhecimento de Transporte Expresso</font>
+							</legend>
+							<h:outputText value="Nome do Cliente:" />
+							<br />
+							<h:outputText
+								value="#{fisicaBean.clienteFisicaSelecionado.nomePessoa}"
+								style="color:blue;" />
+							<br />
+							<h:outputText value="CPF:" />
+							<br />
+							<h:outputText
+								value="#{fisicaBean.clienteFisicaSelecionado.numCpf}"
+								style="color:blue;" />
+							<br/> <h:outputText value="Data de Aniversário:" />
+							<br />
+							<h:outputText
+								value="#{emitirNfAction.notaFiscalSelecionado.dataEmissao}"
+								style="color:blue;" />
+						</p:fieldset>
+					</h:panelGrid>
+					<!-- Panel de expedidor -->
+					<h:panelGrid columns="3">
+						<h:panelGrid >
+							<p:fieldset>
+								<legend>
+									<font size="3" face="Verdana" color="#008000"> De
+										(expedidor) </font>
+								</legend>
+
+								<h:outputText value=" Cliente:" />
+								<br />
+								<h:outputText
+									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.cliente.nomePessoa}"
+									style="color:blue;" />
+								<br />
+								<h:outputText value="Nº Documento:" />
+								<br />
+								<h:outputText value="Procurar num"
+									style="color:blue;" />
+								<br />
+								<h:outputText value="Endereço:" />
+								<br />
+								<h:outputText
+									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.cliente.endereco.nomeRua}"
+									style="color:blue;" />
+								<br />
+								<h:outputText
+									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.cliente.endereco.pontoReferencia}"
+									style="color:blue;" />
+								<br />
+								<h:outputText
+									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.cliente.endereco.bairro}"
+									style="color:blue;" />
+								<br />
+								<h:outputText
+									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.cliente.endereco.cidade }"
+									style="color:blue;" />
+								<br />
+								<h:outputText
+									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.cliente.endereco.uf}"
+									style="color:blue;" />
+								<br />
+								<h:outputText
+									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.cliente.endereco.cep}"
+									style="color:blue;" />
+
+							</p:fieldset>
+						</h:panelGrid>
+						<!-- Panel de destinatário-->
+						<h:panelGrid >
+							<p:fieldset>
+								<legend>
+									<font size="3" face="Verdana" color="#008000"> Para
+										(destinatário) </font>
+								</legend>
+
+								<h:outputText value=" Cliente:" />
+								<br />
+								<h:outputText
+									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.pessoa.nomePessoa}"
+									style="color:blue;" />
+								<br />
+								<h:outputText value="Nº Documento:" />
+								<br />
+								<h:outputText value="Procurar numer"
+									style="color:blue;" />
+								<br />
+								<h:outputText value="Endereço:" />
+								<br />
+								<h:outputText
+									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.pessoa.endereco.nomeRua}"
+									style="color:blue;" />
+								<br />
+								<h:outputText
+									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.pessoa.endereco.pontoReferencia}"
+									style="color:blue;" />
+								<br />
+								<h:outputText
+									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.pessoa.endereco.bairro}"
+									style="color:blue;" />
+								<br />
+								<h:outputText
+									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.pessoa.endereco.cidade }"
+									style="color:blue;" />
+								<br />
+								<h:outputText
+									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.pessoa.endereco.uf}"
+									style="color:blue;" />
+								<br />
+								<h:outputText
+									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.pessoa.endereco.cep}"
+									style="color:blue;" />
+
+							</p:fieldset>
+						</h:panelGrid>
+					</h:panelGrid>
+				</p:fieldset>
+			</h:panelGrid>
+
+
+			<h:panelGrid columns="2" cellpadding="20" cellspacing="2">
+				<!--<p:commandButton id="salvar" value="Salvar"
+					update="mensagemConfirmacao"
+					
+					oncomplete="seleciona.hide()" />
+
+
+				--><h:outputLink id="lnk" value="#">
+
+					<h:outputText value="Imprimir Formulario" />
+					<p:printer id="print" target="alterarNota" />
+
+
+				</h:outputLink>
+				<p:growl id="mensagemConfirmacao" />
+
+			</h:panelGrid>
+		</p:dialog>
 
 
 	</h:form>
