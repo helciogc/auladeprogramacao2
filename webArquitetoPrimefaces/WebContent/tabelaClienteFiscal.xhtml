@@ -76,7 +76,7 @@
 						<p:fieldset>
 							<legend>
 								<font size="3" face="Verdana" color="#008000">
-									Conhecimento de Transporte Expresso</font>
+									Dados do Cliente</font>
 							</legend>
 							<h:outputText value="Nome do Cliente:" />
 							<br />
@@ -92,106 +92,13 @@
 							<br/> <h:outputText value="Data de Aniversário:" />
 							<br />
 							<h:outputText
-								value="#{emitirNfAction.notaFiscalSelecionado.dataEmissao}"
+								value="#{fisicaBean.clienteFisicaSelecionado.dataNascimento}"
 								style="color:blue;" />
 						</p:fieldset>
 					</h:panelGrid>
-					<!-- Panel de expedidor -->
-					<h:panelGrid columns="3">
-						<h:panelGrid >
-							<p:fieldset>
-								<legend>
-									<font size="3" face="Verdana" color="#008000"> De
-										(expedidor) </font>
-								</legend>
-
-								<h:outputText value=" Cliente:" />
-								<br />
-								<h:outputText
-									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.cliente.nomePessoa}"
-									style="color:blue;" />
-								<br />
-								<h:outputText value="Nº Documento:" />
-								<br />
-								<h:outputText value="Procurar num"
-									style="color:blue;" />
-								<br />
-								<h:outputText value="Endereço:" />
-								<br />
-								<h:outputText
-									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.cliente.endereco.nomeRua}"
-									style="color:blue;" />
-								<br />
-								<h:outputText
-									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.cliente.endereco.pontoReferencia}"
-									style="color:blue;" />
-								<br />
-								<h:outputText
-									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.cliente.endereco.bairro}"
-									style="color:blue;" />
-								<br />
-								<h:outputText
-									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.cliente.endereco.cidade }"
-									style="color:blue;" />
-								<br />
-								<h:outputText
-									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.cliente.endereco.uf}"
-									style="color:blue;" />
-								<br />
-								<h:outputText
-									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.cliente.endereco.cep}"
-									style="color:blue;" />
-
-							</p:fieldset>
-						</h:panelGrid>
-						<!-- Panel de destinatário-->
-						<h:panelGrid >
-							<p:fieldset>
-								<legend>
-									<font size="3" face="Verdana" color="#008000"> Para
-										(destinatário) </font>
-								</legend>
-
-								<h:outputText value=" Cliente:" />
-								<br />
-								<h:outputText
-									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.pessoa.nomePessoa}"
-									style="color:blue;" />
-								<br />
-								<h:outputText value="Nº Documento:" />
-								<br />
-								<h:outputText value="Procurar numer"
-									style="color:blue;" />
-								<br />
-								<h:outputText value="Endereço:" />
-								<br />
-								<h:outputText
-									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.pessoa.endereco.nomeRua}"
-									style="color:blue;" />
-								<br />
-								<h:outputText
-									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.pessoa.endereco.pontoReferencia}"
-									style="color:blue;" />
-								<br />
-								<h:outputText
-									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.pessoa.endereco.bairro}"
-									style="color:blue;" />
-								<br />
-								<h:outputText
-									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.pessoa.endereco.cidade }"
-									style="color:blue;" />
-								<br />
-								<h:outputText
-									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.pessoa.endereco.uf}"
-									style="color:blue;" />
-								<br />
-								<h:outputText
-									value="#{emitirNfAction.notaFiscalSelecionado.coletaMercadoria.pessoa.endereco.cep}"
-									style="color:blue;" />
-
-							</p:fieldset>
-						</h:panelGrid>
-					</h:panelGrid>
+					
+						
+				
 				</p:fieldset>
 			</h:panelGrid>
 
@@ -206,7 +113,7 @@
 				--><h:outputLink id="lnk" value="#">
 
 					<h:outputText value="Imprimir Formulario" />
-					<p:printer id="print" target="alterarNota" />
+					<p:printer id="print" target="alterarCliente" />
 
 
 				</h:outputLink>
